@@ -55,9 +55,9 @@ void GaussianFil() {
 
 
 
-int main() {
-	GaussianFil();
-	boxFil();
-	blurFil();
-	return 0;
-}
+//int main() {
+//	GaussianFil();
+//	boxFil();
+//	blurFil();
+//	return 0;
+//}
