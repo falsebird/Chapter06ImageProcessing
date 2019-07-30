@@ -21,5 +21,8 @@
     <ClCompile Include="_LinearImageFilter.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="_dilate_And_erode.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
