@@ -23,7 +23,7 @@ using namespace cv;
 //-----------------------------------【全局变量声明部分】-----------------------------------
 //		描述：全局变量声明
 //-----------------------------------------------------------------------------------------------
-Mat g_srcImage, g_dstImage;//原始图和效果图
+Mat _srcImage, _dstImage;//原始图和效果图
 int g_nElementShape = MORPH_RECT;//元素结构的形状
 
 //变量接收的TrackBar位置参数
@@ -43,25 +43,19 @@ static void on_TopBlackHat(int, void*);//回调函数
 static void ShowHelpText(); 
 
 
-//-----------------------------------【main( )函数】--------------------------------------------
-//		描述：控制台应用程序的入口函数，我们的程序从这里开始
-//-----------------------------------------------------------------------------------------------
-int main()
-{
-	
-
+bool showm() {//将main内容迁移至改方法内
 	ShowHelpText();
 
 	//载入原图
-	g_srcImage = imread("1.jpg");
-	if (!g_srcImage.empty()) {
-		cout<<"Oh，no，读取srcImage错误~！ \n"<<endl; 
-		return false; 
+	_srcImage = imread("img/11.jpg");
+	if (_srcImage.empty()) {
+		cout << "Oh，no，读取srcImage错误~！ \n" << endl;
+		return false;
 	}
 
 	//显示原始图
 	namedWindow("【原始图】");
-	imshow("【原始图】", g_srcImage);
+	imshow("【原始图】", _srcImage);
 
 	//创建三个窗口
 	namedWindow("【开运算/闭运算】", 1);
@@ -108,7 +102,17 @@ int main()
 			g_nElementShape = (g_nElementShape + 1) % 3;
 	}
 
-	return 0;
+	return true;
+}
+
+//-----------------------------------【main( )函数】--------------------------------------------
+//		描述：控制台应用程序的入口函数，我们的程序从这里开始
+//-----------------------------------------------------------------------------------------------
+int main()
+{
+	
+	showm();
+	
 }
 
 
@@ -124,16 +128,16 @@ static void on_OpenClose(int, void*)
 	Mat element = getStructuringElement(g_nElementShape, Size(Absolute_offset * 2 + 1, Absolute_offset * 2 + 1), Point(Absolute_offset, Absolute_offset));
 	//进行操作
 	if (offset < 0)
-为:
-		morphologyEx(g_srcImage, g_dstImage, MORPH_OPEN, element);
+
+		morphologyEx(_srcImage, _dstImage, MORPH_OPEN, element);
 	else
 
-		morphologyEx(g_srcImage, g_dstImage, MORPH_CLOSE, element);
+		morphologyEx(_srcImage, _dstImage, MORPH_CLOSE, element);
 
 
 
 	//显示图像
-	imshow("【开运算/闭运算】", g_dstImage);
+	imshow("【开运算/闭运算】", _dstImage);
 }
 
 
@@ -149,11 +153,11 @@ static void on_ErodeDilate(int, void*)
 	Mat element = getStructuringElement(g_nElementShape, Size(Absolute_offset * 2 + 1, Absolute_offset * 2 + 1), Point(Absolute_offset, Absolute_offset));
 	//进行操作
 	if (offset < 0)
-		erode(g_srcImage, g_dstImage, element);
+		erode(_srcImage, _dstImage, element);
 	else
-		dilate(g_srcImage, g_dstImage, element);
+		dilate(_srcImage, _dstImage, element);
 	//显示图像
-	imshow("【腐蚀/膨胀】", g_dstImage);
+	imshow("【腐蚀/膨胀】", _dstImage);
 }
 
 
@@ -169,11 +173,11 @@ static void on_TopBlackHat(int, void*)
 	Mat element = getStructuringElement(g_nElementShape, Size(Absolute_offset * 2 + 1, Absolute_offset * 2 + 1), Point(Absolute_offset, Absolute_offset));
 	//进行操作
 	if (offset < 0)
-		morphologyEx(g_srcImage, g_dstImage, MORPH_TOPHAT, element);
+		morphologyEx(_srcImage, _dstImage, MORPH_TOPHAT, element);
 	else
-		morphologyEx(g_srcImage, g_dstImage, MORPH_BLACKHAT, element);
+		morphologyEx(_srcImage, _dstImage, MORPH_BLACKHAT, element);
 	//显示图像
-	imshow("【顶帽/黑帽】", g_dstImage);
+	imshow("【顶帽/黑帽】", _dstImage);
 }
 
 //-----------------------------------【ShowHelpText( )函数】----------------------------------

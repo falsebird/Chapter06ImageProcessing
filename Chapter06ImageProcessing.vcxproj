@@ -124,6 +124,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="48_Morphology.cpp" />
     <ClCompile Include="WaveFiltering.cpp" />
     <ClCompile Include="_dilate_And_erode.cpp" />
     <ClCompile Include="_LinearImageFilter.cpp" />
