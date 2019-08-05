@@ -90,7 +90,7 @@ static void onMouse(int event, int x, int y, int, void *) {
 
 void doMain() {
 
-	g_srcImg = imread("1.jpg", 1);
+	g_srcImg = imread("img/13.jpg", 1);
 
 	if (!g_srcImg.data) { cout << "Í¼Æ¬¶ÁÈ¡´íÎó£¡£¡" << endl; return; }
 	showHelpText();
