@@ -5,8 +5,12 @@ using namespace cv;
 using namespace std;
 
 void dmain() {
-	Mat srcImage = imread("1,jpg");
+	Mat srcImage = imread("1.jpg");
 	Mat tempImage, dstImage1,dstImage2;
+	if (srcImage.empty()) {
+		cout << "¶ÁÈ¡Ô­Í¼Æ¬´íÎó";
+		return;
+	}
 
 	tempImage = srcImage;
 
