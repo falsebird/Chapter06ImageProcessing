@@ -125,6 +125,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="48_Morphology.cpp" />
+    <ClCompile Include="resize.cpp" />
     <ClCompile Include="WaveFiltering.cpp" />
     <ClCompile Include="_dilate_And_erode.cpp" />
     <ClCompile Include="_floodFill2.cpp" />
