@@ -36,9 +36,15 @@
     <ClCompile Include="_threshold.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="head.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="_threshold.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
