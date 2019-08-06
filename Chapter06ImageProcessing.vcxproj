@@ -130,6 +130,10 @@
     <ClCompile Include="_dilate_And_erode.cpp" />
     <ClCompile Include="_floodFill2.cpp" />
     <ClCompile Include="_LinearImageFilter.cpp" />
+    <ClCompile Include="_threshold.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="head.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

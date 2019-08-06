@@ -26,8 +26,8 @@ void dmain() {
 
 }
 
-int main() {
-	dmain();
-	return 0;
-}
+//int main() {
+//	dmain();
+//	return 0;
+//}
 
